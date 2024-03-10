@@ -10,11 +10,6 @@ public class Gun : MonoBehaviour
 
     private float cooldown;
 
-    void Start()
-    {
-        Debug.Log(bulletSpeed);
-    }
-
     void Update()
     {
         if(cooldown >= fireRate)
@@ -37,6 +32,5 @@ public class Gun : MonoBehaviour
         {
             cooldown += Time.fixedDeltaTime;
         }
-        Debug.Log(cooldown);
     }
 }

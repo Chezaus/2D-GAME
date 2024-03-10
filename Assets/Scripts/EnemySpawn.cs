@@ -6,21 +6,24 @@ public class EnemySpawn : MonoBehaviour
 {
 
     [SerializeField] public GameObject enemy;
+    [SerializeField] public int maxEnemy;
     [SerializeField] public float spawnRate;
 
     private float cooldown;
+    private int enemiesLeft;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemiesLeft = maxEnemy;
     }
     void Update()
     {
-        if(cooldown >= spawnRate)
+        if(cooldown >= spawnRate && enemiesLeft > 0)
         {
-            Instantiate(enemy,new Vector2(1,1), Quaternion.identity);
+            Instantiate(enemy,this.gameObject.transform.position, Quaternion.identity);
             cooldown = 0;
+            enemiesLeft -= 1;
         }
     }
 

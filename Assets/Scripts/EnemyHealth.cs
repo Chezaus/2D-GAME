@@ -5,12 +5,21 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] public int health;
+    public EnemySpawn spawn;
+
+    void Start()
+    {
+        if(spawn == null)
+        {spawn = GameObject.Find("Enemy Spawn").GetComponent<EnemySpawn>();}
+    }
 
     void FixedUpdate()
     {
         if(health <= 0)
         {
             Destroy(this.gameObject);
+            spawn.enemiesAlive -= 1;
+
         }
     }
 

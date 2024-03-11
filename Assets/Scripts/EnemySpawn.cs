@@ -13,6 +13,7 @@ public class EnemySpawn : MonoBehaviour
 
     private int enemiesLeft;
     private float cooldown;
+    private bool collisionCheck = true;
     
 
     // Start is called before the first frame update
@@ -22,7 +23,7 @@ public class EnemySpawn : MonoBehaviour
     }
     void Update()
     {
-        if(cooldown >= spawnRate && enemiesLeft > 0)
+        if(cooldown >= spawnRate && collisionCheck && enemiesLeft > 0)
         {
             Instantiate(enemy,this.gameObject.transform.position, Quaternion.identity);
             cooldown = 0;
@@ -41,6 +42,21 @@ public class EnemySpawn : MonoBehaviour
         {
             enemiesLeft = maxEnemy;
             enemiesAlive = maxEnemy;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.gameObject.tag == ("Enemy"))
+        {
+            collisionCheck = false;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.tag == ("Enemy"))
+        {
+            collisionCheck = true;
         }
     }
 }

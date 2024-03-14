@@ -13,7 +13,8 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] public RoundCounter round;
 
     private float cooldown;
-    private bool enemyAlive = true;
+
+    public bool enemyAlive = true;
     private bool collisionCheck = true;
 
     void Start()
@@ -37,8 +38,9 @@ public class EnemySpawn : MonoBehaviour
             cooldown += Time.fixedDeltaTime;
         }
 
-        if(round.timeLeft > 0 && GameObject.Find("Enemy") == null)
+        if(round.timeLeft < 0 && GameObject.FindWithTag("Enemy") == null)
         {
+            Debug.Log("ENEMY DIED");
             enemyAlive = false;
         }
     }

@@ -13,6 +13,8 @@ public class BulletHealth : MonoBehaviour
     void Start()
     {
         health = bulletPenetration;
+        Debug.Log(layers);
+        
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -20,6 +22,12 @@ public class BulletHealth : MonoBehaviour
         if(other.gameObject.layer != layers)
         {
             health -= 1;
+            
+        }
+
+        if(other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+            Destroy(this.gameObject);
         }
 
         if(health <= 0)

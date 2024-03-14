@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class Dashbar : MonoBehaviour
 {
-    public EnemySpawn spawn;
+    public RoundCounter count;
     float value;
     [SerializeField] Image bar;
 
     void Update()
     {
-        if(spawn.enemiesAlive < 0)  {value = 1;}
-        else{value = (float)spawn.enemiesAlive/spawn.maxEnemy;}
+        if(count.timeLeft < 0)  {value = 0;}
+        else{value = (float)count.timeLeft/count.roundTime;}
 
         
         bar.fillAmount = value;

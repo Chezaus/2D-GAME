@@ -6,28 +6,27 @@ public class EnemySpawn : MonoBehaviour
 {
 
     [SerializeField] public GameObject enemy;
+    [SerializeField] public float roundTime;
     [SerializeField] public int maxEnemy;
     [SerializeField] public float spawnRate;
 
-    public int enemiesAlive;
+    [SerializeField] public RoundCounter round;
 
-    private int enemiesLeft;
     private float cooldown;
+    private bool enemyAlive = true;
     private bool collisionCheck = true;
-    
 
-    // Start is called before the first frame update
     void Start()
     {
-        enemiesLeft = maxEnemy;
+        enemyAlive = true;
     }
+    
     void Update()
     {
-        if(cooldown >= spawnRate && collisionCheck && enemiesLeft > 0)
+        if(cooldown >= spawnRate && collisionCheck && round.timeLeft > 0)
         {
             Instantiate(enemy,this.gameObject.transform.position, Quaternion.identity);
             cooldown = 0;
-            enemiesLeft -= 1;
         }
     }
 
@@ -38,12 +37,12 @@ public class EnemySpawn : MonoBehaviour
             cooldown += Time.fixedDeltaTime;
         }
 
-        if(GameObject.FindWithTag("Enemy") == null)
+        if(round.timeLeft > 0 && GameObject.Find("Enemy") == null)
         {
-            enemiesLeft = maxEnemy;
-            enemiesAlive = maxEnemy;
+            enemyAlive = false;
         }
     }
+ 
 
     void OnTriggerStay2D(Collider2D other)
     {

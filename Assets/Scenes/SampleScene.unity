@@ -679,7 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4841565763920543261, guid: 1bc70b4c419b5e3439d4e4c21a508fac, type: 3}
-  bulletSpeed: 3
+  bulletSpeed: 5
   fireRate: 1
 --- !u!58 &958201841
 CircleCollider2D:
@@ -828,9 +828,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3497253137434142521, guid: 8a1e31616af93a1418bacf1da61e82de, type: 3}
-  maxEnemy: 5
+  roundTime: 0
+  maxEnemy: 50
   spawnRate: 1
-  enemiesAlive: 0
+  round: {fileID: 2009669462}
 --- !u!58 &1326463288
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -865,7 +866,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.70710677
 --- !u!1 &1394342173
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +881,7 @@ GameObject:
   - component: {fileID: 1394342175}
   - component: {fileID: 1394342178}
   m_Layer: 0
-  m_Name: Round Timer
+  m_Name: Round Clock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -978,7 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01c68033014de04c8694092ac522345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: {fileID: 1326463287}
+  count: {fileID: 2009669462}
   bar: {fileID: 1394342175}
 --- !u!1 &1664873382
 GameObject:
@@ -1766,6 +1767,53 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2009669461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009669463}
+  - component: {fileID: 2009669462}
+  m_Layer: 0
+  m_Name: Round Counter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2009669462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009669461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a7e94ada62b35428a3fd07d7bc7d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundTime: 10
+  timeLeft: 0
+  roundNumber: 0
+--- !u!4 &2009669463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009669461}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9474026, y: 1.7478812, z: 0.09724808}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1777,3 +1825,4 @@ SceneRoots:
   - {fileID: 93692844}
   - {fileID: 1664873384}
   - {fileID: 1670400459}
+  - {fileID: 2009669463}

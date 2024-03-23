@@ -7,9 +7,10 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] public Rigidbody2D character;
     [SerializeField] public float characterSpeed;
+    [SerializeField] public float modifierSpeed = 1;
 
     void Update()
     {
-        character.velocity = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")).normalized *characterSpeed;
+        character.velocity = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")).normalized * characterSpeed * modifierSpeed;
     }
 }

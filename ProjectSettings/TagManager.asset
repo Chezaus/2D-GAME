@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
-  - Enemy
   - Wall
+  - powerUp1
+  - powerUp2
   layers:
   - Default
   - TransparentFX
@@ -17,16 +18,16 @@ TagManager:
   - Wall
   - Player
   - Enemy
+  - 
+  - Bullet
+  - 
+  - PowerUp
+  - 
+  - 
+  - 
+  - 
   - Obstacle
   - Background
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

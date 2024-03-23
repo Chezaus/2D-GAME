@@ -16,6 +16,11 @@ namespace Pathfinding.Examples {
 		public float rotationDamping = 10.0f;
 		public bool staticOffset = false;
 
+		void Start()
+		{
+			target = GameObject.Find("Player").transform;
+		}
+
 		void LateUpdate () {
 			Vector3 wantedPosition;
 

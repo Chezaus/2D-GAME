@@ -5,14 +5,17 @@ using UnityEngine;
 public class BulletHealth : MonoBehaviour
 {
 
-    [SerializeField] public int bulletPenetration;
+    [SerializeField] public PlayerAttributes player;
     [SerializeField] public LayerMask layers;
 
     private int health;
 
     void Start()
     {
-        health = bulletPenetration;
+        if(player == null)
+        {
+            player = GameObject.Find("Player").GetComponent<PlayerAttributes>();        }
+        health = player.bulletPenetration;
         Debug.Log(layers);
         
     }

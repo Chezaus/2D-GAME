@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6604336436544432980}
   - component: {fileID: 8280616243303614615}
   - component: {fileID: 2787895494705310567}
+  - component: {fileID: 8525896287250475446}
   m_Layer: 7
   m_Name: Player 1
   m_TagString: Untagged
@@ -104,8 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 6604336436544432980}
+  player: {fileID: 8525896287250475446}
   characterSpeed: 2
-  modifierSpeed: 1
 --- !u!114 &2181811840829397425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4841565763920543261, guid: 1bc70b4c419b5e3439d4e4c21a508fac, type: 3}
+  character: {fileID: 7111507441704040498}
   bulletSpeed: 5
   fireRate: 1
 --- !u!114 &5366809975486683347
@@ -146,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f281bbf9c8958c48ae08a115bb576fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 3857342061812737627}
+  player: {fileID: 8525896287250475446}
   time: {fileID: 0}
 --- !u!50 &6604336436544432980
 Rigidbody2D:
@@ -255,3 +257,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &8525896287250475446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7111507441704040498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2792757a6cf5f489b51f86b6d1b6bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifierSpeed: 1
+  bulletPenetration: 1

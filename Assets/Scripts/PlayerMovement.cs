@@ -12,5 +12,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         character.velocity = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")).normalized * characterSpeed * player.modifierSpeed;
+        Debug.Log(new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")));
     }
 }

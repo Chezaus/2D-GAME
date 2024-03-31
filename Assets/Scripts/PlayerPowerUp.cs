@@ -26,6 +26,7 @@ public class PlayerPowerUp : MonoBehaviour
                 cooldown2 = (int)time.timeLeft - 10;
                 player.bulletPenetration += 1;
                 Destroy(other.gameObject);
+                Debug.Log(player.bulletPenetration);
             }
             
             Debug.Log("LAYER");

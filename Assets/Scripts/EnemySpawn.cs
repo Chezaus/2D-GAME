@@ -8,11 +8,16 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] public GameObject enemy;
     [SerializeField] public float roundTime;
     [SerializeField] public int maxEnemy;
-    [SerializeField] public float spawnRate;
+    [SerializeField] public float maxSpawnRate;
+    [SerializeField] public float minSpawnRate;
+
+    [SerializeField] public Transform[] spawnPoints;
 
     [SerializeField] public RoundCounter round;
 
     private float cooldown;
+    private float spawnRate = 1;
+    
 
     public bool enemyAlive = true;
     private bool collisionCheck = true;
@@ -20,31 +25,40 @@ public class EnemySpawn : MonoBehaviour
     void Start()
     {
         enemyAlive = true;
+        Debug.Log(this.gameObject.transform.position);
     }
     
     void Update()
     {
         if(cooldown >= spawnRate && collisionCheck && round.timeLeft > 0)
         {
-            Instantiate(enemy,this.gameObject.transform.position, Quaternion.identity);
+            for(int i = 0;i < Random.Range(1,5); i++)
+            {
+                int randomSpawn = Random.Range(0,spawnPoints.Length);
+                Vector3 spawnPoint = new Vector3(
+                spawnPoints[randomSpawn].position.x + Random.Range(-1,1), 
+                spawnPoints[randomSpawn].position.y + Random.Range(-1,1), 
+                spawnPoints[randomSpawn].position.z); 
+                Instantiate(enemy,spawnPoint, Quaternion.identity);
+                Debug.Log(spawnPoint);
+            }
+            
+            spawnRate = Random.Range(minSpawnRate,maxSpawnRate);
+            
             cooldown = 0;
         }
     }
 
     void FixedUpdate()
     {
-        if(cooldown < spawnRate)
-        {
             cooldown += Time.fixedDeltaTime;
-        }
-
+     
         if(round.timeLeft < 0 && GameObject.FindWithTag("Enemy") == null)
         {
             Debug.Log("ENEMY DIED");
             enemyAlive = false;
         }
     }
- 
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -53,6 +67,7 @@ public class EnemySpawn : MonoBehaviour
             collisionCheck = false;
         }
     }
+
     void OnTriggerExit2D(Collider2D other)
     {
         if(other.gameObject.tag == ("Enemy"))

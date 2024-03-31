@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class PlayerAim : MonoBehaviour
 {
     [SerializeField] public GameObject bullet;
+    [SerializeField] public GameObject character;
     [SerializeField] public float bulletSpeed;
     [SerializeField] public float fireRate;
 
@@ -14,24 +15,14 @@ public class Gun : MonoBehaviour
     {
         if(cooldown >= fireRate)
         {
-<<<<<<< Updated upstream:Assets/Scripts/Gun.cs
-            if(Input.GetAxisRaw("AltVertical") != 0 || Input.GetAxisRaw("AltHorizontal") != 0)
-=======
             if(Input.GetButton("Fire"))
->>>>>>> Stashed changes:Assets/Scripts/PlayerAim.cs
             {
             
                 GameObject recentBullet = (GameObject)Instantiate(bullet, this.transform.position, Quaternion.identity);
-                recentBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxisRaw("AltVertical"),Input.GetAxisRaw("AltHorizontal")).normalized * bulletSpeed;
+                recentBullet.GetComponent<Rigidbody2D>().velocity = new Vector2 (Camera.main.ScreenToWorldPoint(Input.mousePosition).x - character.gameObject.transform.position.x,Camera.main.ScreenToWorldPoint(Input.mousePosition).y - character.gameObject.transform.position.y).normalized * bulletSpeed;
                 cooldown = 0f;
             }
-<<<<<<< Updated upstream:Assets/Scripts/Gun.cs
-
-        }
-        
-=======
         }     
->>>>>>> Stashed changes:Assets/Scripts/PlayerAim.cs
     }
 
     void FixedUpdate()

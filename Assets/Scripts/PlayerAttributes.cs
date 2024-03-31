@@ -7,5 +7,7 @@ public class PlayerAttributes : MonoBehaviour
 
     public float modifierSpeed = 1;
     public int bulletPenetration = 1;
+
+        
     
 }

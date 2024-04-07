@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1293944933
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,8 +101,11 @@ MonoBehaviour:
   enemy: {fileID: 3497253137434142521, guid: 8a1e31616af93a1418bacf1da61e82de, type: 3}
   roundTime: 0
   maxEnemy: 50
-  spawnRate: 1
+  maxSpawnRate: 0
+  minSpawnRate: 0
+  spawnPoints: []
   round: {fileID: 0}
+  enemyAlive: 1
 --- !u!58 &8697543492038732441
 CircleCollider2D:
   m_ObjectHideFlags: 0

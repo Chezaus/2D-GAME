@@ -9,9 +9,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public PlayerAttributes player;
     [SerializeField] public float characterSpeed;
 
+    public Vector2 characterVector;
+
     void Update()
     {
         character.velocity = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")).normalized * characterSpeed * player.modifierSpeed;
-        Debug.Log(new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")));
+        characterVector = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - powerUp1
   - powerUp2
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -45,17 +46,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1172287007
+    locked: 0
   - name: Obstacle
     uniqueID: 561844855
-    locked: 0
-  - name: Player
-    uniqueID: 835474969
     locked: 0
   - name: Sprite
     uniqueID: 3001022363
     locked: 0
-  - name: Background
-    uniqueID: 1172287007
+  - name: Player
+    uniqueID: 835474969
     locked: 0
   - name: UI
     uniqueID: 1143185935

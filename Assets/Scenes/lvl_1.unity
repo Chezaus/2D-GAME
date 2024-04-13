@@ -3840,6 +3840,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9142982350883471035, guid: 52f4f2d7856d52c458621e92d261ef2e, type: 3}
   m_PrefabInstance: {fileID: 8469760644382979202}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &299592149492293284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7158346985512481399, guid: 52f4f2d7856d52c458621e92d261ef2e, type: 3}
+  m_PrefabInstance: {fileID: 8469760644382979202}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebeac2a774956174d814f5e235fe8725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!19719996 &584457371614381999
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -4944,6 +4955,10 @@ PrefabInstance:
       propertyPath: count
       value: 
       objectReference: {fileID: 6636830238377452815}
+    - target: {fileID: 1993364364560158845, guid: 41aa7ad132fcef5448d6e5748211a289, type: 3}
+      propertyPath: main
+      value: 
+      objectReference: {fileID: 299592149492293284}
     - target: {fileID: 3165151630657491994, guid: 41aa7ad132fcef5448d6e5748211a289, type: 3}
       propertyPath: m_Name
       value: GUI

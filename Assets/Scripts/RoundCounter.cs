@@ -14,7 +14,7 @@ public class RoundCounter : MonoBehaviour
 
     void Start()
     {
-        roundNumber = 0;
+        roundNumber = 1;
         timeLeft = roundTime;
     }
 

@@ -5283,6 +5283,8 @@ MonoBehaviour:
   maxEnemy: 50
   maxSpawnRate: 3
   minSpawnRate: 0
+  maxEnemyGroups: 5
+  minEnemyGroups: 1
   spawnPoints:
   - {fileID: 1501037127}
   - {fileID: 87081246}

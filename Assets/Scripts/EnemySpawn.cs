@@ -10,7 +10,7 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] public int maxEnemy;
     [SerializeField] public float maxSpawnRate;
     [SerializeField] public float minSpawnRate;
-     [SerializeField] public float maxEnemyGroups;
+    [SerializeField] public float maxEnemyGroups;
     [SerializeField] public float minEnemyGroups;
 
     [SerializeField] public Transform[] spawnPoints;

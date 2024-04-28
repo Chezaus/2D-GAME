@@ -9,7 +9,7 @@ public class RunnerAI : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Bullet"))
         {
             GameObject recentPuddle = Instantiate(puddle, this.gameObject.transform.position, Quaternion.identity);
             recentPuddle.GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("Obstacle");

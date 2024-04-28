@@ -5457,7 +5457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7e94ada62b35428a3fd07d7bc7d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundTime: 300
+  roundTime: 60
   spawn: {fileID: 4220123465621551139}
   timeLeft: 0
   roundNumber: 0
